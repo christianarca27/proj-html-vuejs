@@ -10,12 +10,14 @@ export default {
 
     props: {
         text: "",
+
+        type: "small",
     }
 }
 </script>
 
 <template>
-    <button>
+    <button :class="type">
         {{ text }}
     </button>
 </template>
@@ -23,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 button {
     background-color: #ef6f31;
-    padding: 0 1.5rem;
+    padding: 1rem 2rem;
     border: 0;
     border-radius: 5px;
 
@@ -35,5 +37,9 @@ button {
     &:hover {
         background-color: #6ac5f1;
     }
+}
+
+button.small {
+    padding: 0rem 1.5rem;
 }
 </style>

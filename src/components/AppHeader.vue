@@ -86,7 +86,7 @@ export default {
                 <i class="fa-regular fa-clock"></i>
                 <span id="adv-time-left">00 : 00 : 00 : 00</span>
             </p>
-            <PrimaryButton id="adv-button" :text="'Get ticket'"></PrimaryButton>
+            <PrimaryButton id="adv-button" :type="'small'" :text="'Get ticket'"></PrimaryButton>
         </div>
 
         <nav class="container">
@@ -117,7 +117,20 @@ export default {
         </nav>
 
         <div id="jumbo">
-            jumbo
+            <img id="jumbo-shape-1" src="/images/artist-shape-02-768x415.png" alt="">
+            <img id="jumbo-shape-2" src="/images/artist-shape-03.png" alt="">
+            <img id="jumbo-shape-3" src="/images/artist-hero-image-03-204x300.png" alt="">
+            <img id="jumbo-shape-4" src="/images/artist-hero-image-02-232x300.jpg" alt="">
+            <img id="jumbo-shape-5" src="/images/artist-hero-image-01.jpg" alt="">
+            <div id="jumbo-inner">
+                <h2>Hello, Im Matin</h2>
+                <strong>Artist Coaching And Mentoring Might Be for You.</strong>
+                <PrimaryButton :text="'Get started today'"></PrimaryButton>
+            </div>
+            <img id="jumbo-shape-6" src="/images/artist-shape-01-600x577.png" alt="">
+            <img id="jumbo-shape-7" src="/images/artist-shape-04-127x300.png" alt="">
+            <img id="jumbo-shape-8" src="/images/artist-shape-05-300x198.png" alt="">
+            <img id="jumbo-shape-9" src="/images/artist-hero-image-04-235x300.jpg" alt="">
         </div>
     </header>
 </template>
@@ -210,6 +223,87 @@ header {
             i {
                 color: #696969;
             }
+        }
+    }
+
+    #jumbo {
+        height: 700px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+        }
+
+        #jumbo-shape-1 {
+            top: 0;
+            left: 0;
+        }
+
+        #jumbo-shape-2 {
+            top: 50%;
+            left: 2%;
+            transform: translateY(-50%);
+        }
+
+        #jumbo-shape-3 {
+            top: 40%;
+            left: 23%;
+        }
+
+        #jumbo-shape-4 {
+            top: 10%;
+            left: 18%;
+        }
+
+        #jumbo-shape-5 {
+            top: 49%;
+            left: 8%;
+        }
+
+        #jumbo-inner {
+            width: 30%;
+
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            gap: 30px;
+
+            text-align: center;
+
+            h2 {
+                font-size: 2rem;
+                color: #6ac5f1;
+            }
+
+            strong {
+                font-size: 1.5rem;
+            }
+        }
+
+        #jumbo-shape-6 {
+            top: 0;
+            right: 10%;
+        }
+
+        #jumbo-shape-7 {
+            top: 5%;
+            right: 10%;
+        }
+
+        #jumbo-shape-8 {
+            top: 55%;
+            right: 5%;
+        }
+
+        #jumbo-shape-9 {
+            top: 30%;
+            right: 15%;
         }
     }
 }

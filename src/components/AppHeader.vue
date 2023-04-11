@@ -5,7 +5,71 @@ export default {
     name: "AppHeader",
 
     data() {
-        return {};
+        return {
+            dropdownMenu: [
+                {
+                    title: "Home",
+                    links: [
+                        "Link1",
+                        "Link2",
+                        "Link3",
+                    ],
+                    isActive: false,
+                },
+                {
+                    title: "Pages",
+                    links: [
+                        "Link1",
+                        "Link2",
+                        "Link3",
+                    ],
+                    isActive: false,
+                },
+                {
+                    title: "Courses",
+                    links: [
+                        "Link1",
+                        "Link2",
+                        "Link3",
+                    ],
+                    isActive: false,
+                },
+                {
+                    title: "Features",
+                    links: [
+                        "Link1",
+                        "Link2",
+                        "Link3",
+                    ],
+                    isActive: false,
+                },
+                {
+                    title: "Blog",
+                    links: [
+                        "Link1",
+                        "Link2",
+                        "Link3",
+                    ],
+                    isActive: false,
+                },
+                {
+                    title: "Shop",
+                    links: [
+                        "Link1",
+                        "Link2",
+                        "Link3",
+                    ],
+                    isActive: false,
+                },
+            ],
+
+            socialList: [
+                "fa-twitter",
+                "fa-facebook-f",
+                "fa-instagram",
+                "fa-linkedin",
+            ],
+        };
     },
 
     components: {
@@ -25,8 +89,31 @@ export default {
             <PrimaryButton id="adv-button" :text="'Get ticket'"></PrimaryButton>
         </div>
 
-        <nav>
-            navbar
+        <nav class="container">
+            <a id="navbar-logo" href="index.html">
+                <img src="/images/dark-logo.png" alt="Logo MaxCoach">
+            </a>
+
+            <ul id="navbar-dropdown-menu">
+                <li class="navbar-dropdown-item" v-for="dropdownItem in dropdownMenu"
+                    @click="dropdownItem.isActive = !dropdownItem.isActive">
+                    <div class="dropdown-item-title">
+                        <p>{{ dropdownItem.title }}</p>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul v-show="dropdownItem.isActive" class="navbar-dropdown-item-links">
+                        <li v-for="dropdownItemLink in dropdownItem.links">{{ dropdownItemLink }}</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul id="social-links">
+                <li v-for="social in socialList" class="social-link">
+                    <a href="">
+                        <i class="fa-brands" :class="social"></i>
+                    </a>
+                </li>
+            </ul>
         </nav>
 
         <div id="jumbo">
@@ -58,6 +145,71 @@ header {
 
         #adv-time-left {
             font-weight: bold;
+        }
+    }
+
+    nav {
+        padding: 2rem 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #navbar-logo {
+            height: 30px;
+
+            img {
+                height: 100%;
+                width: auto;
+            }
+        }
+
+        #navbar-dropdown-menu {
+            display: flex;
+            gap: 40px;
+
+            .navbar-dropdown-item {
+                position: relative;
+                cursor: pointer;
+
+                &:hover {
+                    .dropdown-item-title {
+                        p {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .dropdown-item-title {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+
+                    i {
+                        font-size: .5rem;
+                    }
+                }
+
+                .navbar-dropdown-item-links {
+                    border: 1px dotted black;
+                    padding: 1rem .5rem;
+
+                    display: flex;
+                    flex-flow: column nowrap;
+                    gap: 1rem;
+
+                    position: absolute;
+                }
+            }
+        }
+
+        #social-links {
+            display: flex;
+            gap: 20px;
+
+            i {
+                color: #696969;
+            }
         }
     }
 }

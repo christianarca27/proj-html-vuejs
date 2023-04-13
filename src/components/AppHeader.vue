@@ -11,58 +11,84 @@ export default {
                 {
                     title: "Home",
                     links: [
-                        "Link1",
-                        "Link2",
-                        "Link3",
+                        {
+                            name: "Link 1",
+                            url: "#"
+                        },
+                        {
+                            name: "Link 2",
+                            url: "#"
+                        },
                     ],
-                    isActive: false,
                 },
                 {
                     title: "Pages",
                     links: [
-                        "Link1",
-                        "Link2",
-                        "Link3",
+                        {
+                            name: "Link 1",
+                            url: "#"
+                        },
+                        {
+                            name: "Link 2",
+                            url: "#"
+                        },
                     ],
-                    isActive: false,
                 },
                 {
                     title: "Courses",
                     links: [
-                        "Link1",
-                        "Link2",
-                        "Link3",
+                        {
+                            name: "Link 1",
+                            url: "#"
+                        },
+                        {
+                            name: "Link 2",
+                            url: "#"
+                        },
                     ],
-                    isActive: false,
                 },
                 {
                     title: "Features",
                     links: [
-                        "Link1",
-                        "Link2",
-                        "Link3",
+                        {
+                            name: "Link 1",
+                            url: "#"
+                        },
+                        {
+                            name: "Link 2",
+                            url: "#"
+                        },
                     ],
-                    isActive: false,
                 },
                 {
                     title: "Blog",
                     links: [
-                        "Link1",
-                        "Link2",
-                        "Link3",
+                        {
+                            name: "Link 1",
+                            url: "#"
+                        },
+                        {
+                            name: "Link 2",
+                            url: "#"
+                        },
                     ],
-                    isActive: false,
                 },
                 {
                     title: "Shop",
                     links: [
-                        "Link1",
-                        "Link2",
-                        "Link3",
+                        {
+                            name: "Link 1",
+                            url: "#"
+                        },
+                        {
+                            name: "Link 2",
+                            url: "#"
+                        },
                     ],
-                    isActive: false,
                 },
             ],
+
+            activeIndex: null,
         };
     },
 
@@ -90,14 +116,16 @@ export default {
             </a>
 
             <ul id="navbar-dropdown-menu">
-                <li class="navbar-dropdown-item" v-for="dropdownItem in dropdownMenu"
-                    @click="dropdownItem.isActive = !dropdownItem.isActive">
+                <li class="navbar-dropdown-item" v-for="(dropdownItem, index) in dropdownMenu"
+                    @click="index == activeIndex ? activeIndex = null : activeIndex = index">
                     <div class="dropdown-item-title">
                         <p>{{ dropdownItem.title }}</p>
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <ul v-show="dropdownItem.isActive" class="navbar-dropdown-item-links">
-                        <li v-for="dropdownItemLink in dropdownItem.links">{{ dropdownItemLink }}</li>
+                    <ul v-show="index == activeIndex" class="navbar-dropdown-item-links">
+                        <li v-for="dropdownItemLink in dropdownItem.links">
+                            <a :href="dropdownItemLink.url">{{ dropdownItemLink.name }}</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -193,7 +221,8 @@ header {
                 }
 
                 .navbar-dropdown-item-links {
-                    border: 1px dotted black;
+                    background-color: white;
+                    border: 1px solid black;
                     padding: 1rem .5rem;
 
                     display: flex;
@@ -201,6 +230,16 @@ header {
                     gap: 1rem;
 
                     position: absolute;
+                    z-index: 1;
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
         }

@@ -9,9 +9,9 @@ export default {
     },
 
     props: {
-        text: "",
+        text: String,
 
-        type: "small",
+        type: String,
     }
 }
 </script>
@@ -41,5 +41,18 @@ button {
 
 button.small {
     padding: 0rem 1.5rem;
+}
+
+button.circle {
+    padding: 0;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.2rem;
 }
 </style>

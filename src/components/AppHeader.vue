@@ -112,8 +112,8 @@ export default {
             <img id="jumbo-shape-4" src="/images/artist-hero-image-02-232x300.jpg" alt="">
             <img id="jumbo-shape-5" src="/images/artist-hero-image-01.jpg" alt="">
             <div id="jumbo-inner">
-                <h2>Hello, Im Matin</h2>
-                <strong>Artist Coaching And Mentoring Might Be for You.</strong>
+                <h1>Hello, Im Matin</h1>
+                <strong>Artist Coaching And Mentoring<br> Might Be for You.</strong>
                 <PrimaryButton :text="'Get started today'"></PrimaryButton>
             </div>
             <img id="jumbo-shape-6" src="/images/artist-shape-01-600x577.png" alt="">
@@ -247,17 +247,16 @@ header {
         }
 
         #jumbo-inner {
-            width: 30%;
-
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
             gap: 30px;
 
+            z-index: 1;
             text-align: center;
 
-            h2 {
-                font-size: 2rem;
+            h1 {
+                font-size: 3rem;
             }
 
             strong {

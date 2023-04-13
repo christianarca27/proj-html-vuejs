@@ -1,4 +1,6 @@
 <script>
+import SecondaryButton from './SecondaryButton.vue';
+
 export default {
     name: "AppMain",
 
@@ -28,6 +30,10 @@ export default {
             ],
         }
     },
+
+    components: {
+        SecondaryButton,
+    },
 }
 </script>
 
@@ -36,7 +42,9 @@ export default {
         <section id="section-services">
             <div class="container">
                 <h2>Artist Coaching</h2>
+
                 <strong>I understand what it takes to create.<br> I can help you with</strong>
+
                 <ul id="services-list">
                     <li v-for="service in services">
                         <img :src="'/images/' + service.image" alt="Sevice logo">
@@ -44,21 +52,41 @@ export default {
                         <p>{{ service.description }}</p>
                     </li>
                 </ul>
+
+                <div id="goal">
+                    <div id="goal-left">
+                        <img src="/images/artist-quote-icon.png" alt="">
+                        <strong>I coach and mentor visual artists, like you, to Create Like You Mean It</strong>
+                        <span id="sign">Martin Garrix</span>
+                    </div>
+                    <div id="goal-right">
+                        <p>As a coach and mentor, my ultimate goal is to motivate visual artists toward inspirated action. I
+                            help you get you back on track to being the productive, creative, meaningful and authentic
+                            artist
+                            you truly want to be. I support artist in crafting and living a creative life as well as feeling
+                            good about themselves and their art.</p>
+                        <p>As an artist and an educator for nearly 30 years, I understand what it takes to create.</p>
+                        <SecondaryButton :text="'Get started today'"></SecondaryButton>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <section>
         </section>
     </main>
 </template>
 
 <style lang="scss" scoped>
 #section-services {
+    padding: 50px 0;
+
     background-image: url("/images/maxcoach-shape-14.png");
     background-size: contain;
     background-position: top;
     background-repeat: no-repeat;
 
     .container {
-        padding: 2rem 0;
-
         display: flex;
         flex-flow: column;
         align-items: center;
@@ -87,6 +115,45 @@ export default {
             li:nth-child(even) {
                 position: relative;
                 top: 30px;
+            }
+        }
+
+        #goal {
+            padding: 150px 0;
+
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+
+            #goal-left {
+                width: 25%;
+
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                gap: 1rem;
+
+                text-align: center;
+
+                strong {
+                    font-size: 2.2rem;
+                }
+
+                #sign {
+                    font-family: 'Caveat', cursive;
+                    color: #6ac5f1;
+                    font-size: 2rem;
+                }
+            }
+
+            #goal-right {
+                width: 35%;
+                padding-top: calc(32px + 1rem);
+
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: start;
+                gap: 2rem;
             }
         }
     }

@@ -64,7 +64,7 @@ export default {
 <template>
     <div id="reviews-list-wrapper">
         <ul id="reviews-list">
-            <li class="review">
+            <li class="review" @click="activeIndex = previousIndex">
                 <div class="review-title">
                     {{ reviews[previousIndex].title }}
                 </div>
@@ -106,7 +106,7 @@ export default {
                 </div>
             </li>
 
-            <li class="review">
+            <li class="review" @click="activeIndex = nextIndex">
                 <div class="review-title">
                     {{ reviews[nextIndex].title }}
                 </div>
@@ -156,6 +156,7 @@ export default {
             padding: 2rem;
             flex-shrink: 0;
             opacity: .5;
+            cursor: pointer;
 
             &>* {
                 margin-bottom: 1rem;
@@ -189,8 +190,6 @@ export default {
     }
 
     #rotate-commands {
-        margin-bottom: 2rem;
-
         display: flex;
         align-items: center;
         gap: 1rem;

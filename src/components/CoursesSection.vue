@@ -106,6 +106,8 @@ export default {
 
 <style lang="scss" scoped>
 #courses-section {
+    padding: 50px 0;
+
     display: flex;
     flex-flow: column nowrap;
     align-items: center;

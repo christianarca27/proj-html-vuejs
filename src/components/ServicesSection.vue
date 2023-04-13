@@ -83,9 +83,9 @@ export default {
 
         <div class="background-grey">
             <div id="testimonials">
-                <h3>Testimonials</h3>
+                <h2>Testimonials</h2>
 
-                <strong>Why do people love me?</strong>
+                <strong class="subtitle">Why do people love me?</strong>
 
                 <AppCarousel></AppCarousel>
             </div>
@@ -200,6 +200,9 @@ export default {
     }
 
     #testimonials {
+        padding: 50px 0;
+
+
         h3 {
             text-align: center;
             font-size: 2rem;

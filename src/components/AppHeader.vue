@@ -207,7 +207,7 @@ header {
     }
 
     #jumbo {
-        height: 700px;
+        height: 600px;
 
         display: flex;
         justify-content: center;

@@ -1,4 +1,5 @@
 <script>
+import CoursesSection from './CoursesSection.vue';
 import ServicesSection from './ServicesSection.vue';
 
 export default {
@@ -8,7 +9,8 @@ export default {
     },
 
     components: {
-        ServicesSection
+        ServicesSection,
+        CoursesSection,
     },
 }
 </script>
@@ -16,6 +18,8 @@ export default {
 <template>
     <main>
         <ServicesSection></ServicesSection>
+
+        <CoursesSection></CoursesSection>
     </main>
 </template>
 

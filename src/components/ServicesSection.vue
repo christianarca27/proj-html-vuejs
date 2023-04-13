@@ -43,7 +43,7 @@ export default {
     <section id="section-services">
         <h2>Artist Coaching</h2>
 
-        <strong>I understand what it takes to create.<br> I can help you with</strong>
+        <strong class="subtitle">I understand what it takes to create.<br> I can help you with</strong>
 
         <div class="background-white">
             <div id="services-list" class="container-small">
@@ -95,8 +95,6 @@ export default {
 
 <style lang="scss" scoped>
 #section-services {
-    margin-bottom: 100px;
-
     background-image: url("/images/maxcoach-shape-14.png");
     background-size: contain;
     background-position: 0 50px;
@@ -104,18 +102,6 @@ export default {
 
     .background-grey {
         background-color: #faf8f6;
-    }
-
-    h2 {
-        text-align: center;
-        font-size: 2rem;
-    }
-
-    strong {
-        display: block;
-        margin-bottom: 3rem;
-        text-align: center;
-        font-size: 1.7rem;
     }
 
     #services-list {

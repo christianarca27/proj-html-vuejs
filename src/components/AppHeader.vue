@@ -258,7 +258,6 @@ header {
 
             h2 {
                 font-size: 2rem;
-                color: #6ac5f1;
             }
 
             strong {

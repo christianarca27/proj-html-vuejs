@@ -1,5 +1,6 @@
 <script>
 import PrimaryButton from './PrimaryButton.vue';
+import SocialList from './SocialList.vue'
 
 export default {
     name: "AppHeader",
@@ -62,18 +63,12 @@ export default {
                     isActive: false,
                 },
             ],
-
-            socialList: [
-                "fa-twitter",
-                "fa-facebook-f",
-                "fa-instagram",
-                "fa-linkedin",
-            ],
         };
     },
 
     components: {
         PrimaryButton,
+        SocialList,
     }
 }
 </script>
@@ -107,13 +102,7 @@ export default {
                 </li>
             </ul>
 
-            <ul id="social-links">
-                <li v-for="social in socialList" class="social-link">
-                    <a href="">
-                        <i class="fa-brands" :class="social"></i>
-                    </a>
-                </li>
-            </ul>
+            <SocialList></SocialList>
         </nav>
 
         <div id="jumbo">
@@ -213,15 +202,6 @@ header {
 
                     position: absolute;
                 }
-            }
-        }
-
-        #social-links {
-            display: flex;
-            gap: 20px;
-
-            i {
-                color: #696969;
             }
         }
     }

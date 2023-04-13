@@ -40,20 +40,22 @@ export default {
 <template>
     <main>
         <section id="section-services">
-            <div class="container">
-                <h2>Artist Coaching</h2>
+            <h2>Artist Coaching</h2>
 
-                <strong>I understand what it takes to create.<br> I can help you with</strong>
+            <strong>I understand what it takes to create.<br> I can help you with</strong>
 
-                <ul id="services-list">
-                    <li v-for="service in services">
-                        <img :src="'/images/' + service.image" alt="Sevice logo">
-                        <h3>{{ service.name }}</h3>
-                        <p>{{ service.description }}</p>
-                    </li>
-                </ul>
+            <div class="background-white">
+                <div id="services-list" class="container-small">
+                    <ul>
+                        <li v-for="service in services">
+                            <img :src="'/images/' + service.image" alt="Sevice logo">
+                            <h3>{{ service.name }}</h3>
+                            <p>{{ service.description }}</p>
+                        </li>
+                    </ul>
+                </div>
 
-                <div id="goal">
+                <div id="goal" class="container-small">
                     <div id="goal-left">
                         <img src="/images/artist-quote-icon.png" alt="">
                         <strong>I coach and mentor visual artists, like you, to Create Like You Mean It</strong>
@@ -68,6 +70,13 @@ export default {
                         <p>As an artist and an educator for nearly 30 years, I understand what it takes to create.</p>
                         <SecondaryButton :text="'Get started today'"></SecondaryButton>
                     </div>
+                </div>
+
+                <div id="video-post" class="container-small">
+                    <img id="video-post-shape-1" src="/images/maxcoach-shape-05-150x150.png" alt="">
+                    <img id="video-post-shape-2" src="/images/maxcoach-shape-12-150x150.png" alt="">
+                    <img id="btn-play-youtube" src="/images/icon-youtube-play.png" alt="Youtube play button">
+                    <img id="video-post-cover" src="/images/artist-video-poster.jpg" alt="Poster video Youtube">
                 </div>
             </div>
         </section>
@@ -86,22 +95,21 @@ export default {
     background-position: top;
     background-repeat: no-repeat;
 
-    .container {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
 
-        h2 {
-            font-size: 2rem;
-        }
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+    }
 
-        strong {
-            margin-bottom: 3rem;
-            text-align: center;
-            font-size: 1.7rem;
-        }
+    strong {
+        display: block;
+        margin-bottom: 3rem;
+        text-align: center;
+        font-size: 1.7rem;
+    }
 
-        #services-list {
+    #services-list {
+        ul {
             display: flex;
             gap: 2rem;
 
@@ -117,44 +125,78 @@ export default {
                 top: 30px;
             }
         }
+    }
 
-        #goal {
-            padding: 150px 0;
+    #goal {
+        padding: 150px 0;
+
+        display: flex;
+        justify-content: space-between;
+
+        #goal-left {
+            width: 40%;
 
             display: flex;
-            justify-content: center;
-            gap: 100px;
+            flex-flow: column nowrap;
+            align-items: center;
+            gap: 1rem;
 
-            #goal-left {
-                width: 25%;
+            text-align: center;
 
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: center;
-                gap: 1rem;
-
-                text-align: center;
-
-                strong {
-                    font-size: 2.2rem;
-                }
-
-                #sign {
-                    font-family: 'Caveat', cursive;
-                    color: #6ac5f1;
-                    font-size: 2rem;
-                }
+            strong {
+                font-size: 2.2rem;
             }
 
-            #goal-right {
-                width: 35%;
-                padding-top: calc(32px + 1rem);
-
-                display: flex;
-                flex-flow: column nowrap;
-                align-items: start;
-                gap: 2rem;
+            #sign {
+                font-family: 'Caveat', cursive;
+                color: #6ac5f1;
+                font-size: 2rem;
             }
+        }
+
+        #goal-right {
+            width: 50%;
+            padding-top: calc(32px + 1rem);
+
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: start;
+            gap: 2rem;
+        }
+    }
+
+    #video-post {
+        width: 50%;
+
+        display: flex;
+        justify-content: center;
+
+        position: relative;
+
+        #video-post-shape-1 {
+            position: absolute;
+            top: -30px;
+            left: -30px;
+        }
+
+        #video-post-shape-2 {
+            position: absolute;
+            bottom: -10px;
+            right: -100px;
+        }
+
+        #btn-play-youtube {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #video-post-cover {
+            width: 100%;
+            z-index: 1;
         }
     }
 }

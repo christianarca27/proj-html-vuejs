@@ -246,6 +246,7 @@ header {
     }
 
     #jumbo {
+        background-color: #fbf9f6;
         height: 600px;
 
         display: flex;

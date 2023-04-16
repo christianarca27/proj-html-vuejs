@@ -2,6 +2,7 @@
 import BlogSection from './BlogSection.vue';
 import CoursesSection from './CoursesSection.vue';
 import EventsSection from './EventsSection.vue';
+import NewsletterSection from './NewsletterSection.vue';
 import ServicesSection from './ServicesSection.vue';
 
 export default {
@@ -14,7 +15,8 @@ export default {
         ServicesSection,
         CoursesSection,
         BlogSection,
-        EventsSection
+        EventsSection,
+        NewsletterSection
     },
 }
 </script>
@@ -28,6 +30,8 @@ export default {
         <BlogSection></BlogSection>
 
         <EventsSection></EventsSection>
+
+        <NewsletterSection></NewsletterSection>
     </main>
 </template>
 

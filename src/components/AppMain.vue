@@ -1,6 +1,7 @@
 <script>
 import BlogSection from './BlogSection.vue';
 import CoursesSection from './CoursesSection.vue';
+import EventsSection from './EventsSection.vue';
 import ServicesSection from './ServicesSection.vue';
 
 export default {
@@ -12,7 +13,8 @@ export default {
     components: {
         ServicesSection,
         CoursesSection,
-        BlogSection
+        BlogSection,
+        EventsSection
     },
 }
 </script>
@@ -24,6 +26,8 @@ export default {
         <CoursesSection></CoursesSection>
 
         <BlogSection></BlogSection>
+
+        <EventsSection></EventsSection>
     </main>
 </template>
 
